@@ -45,6 +45,8 @@
 ## 📊 GitHub Stats:
 ![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=Janobob&show_icons=true&hide_border=true)
 
+![](https://github-readme-streak-stats.herokuapp.com/?user=Janobob&hide_border=false)
+
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Janobob&layout=compact)](https://github.com/Janobob)
 
 ## 🔗 Links:
