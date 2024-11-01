@@ -11,6 +11,43 @@
 
         <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen</p>
       </section>
+
+      <section>
+        <nav>
+          <ul class="profile-navigation">
+            <li
+              [ngClass]="{ active: isActive('about-me') }"
+              (click)="onNavigationClick('about-me')"
+            >
+              Über mich
+            </li>
+            <li
+              [ngClass]="{ active: isActive('work-experience') }"
+              (click)="onNavigationClick('work-experience')"
+            >
+              Berufserfahrung
+            </li>
+            <li
+              [ngClass]="{ active: isActive('education') }"
+              (click)="onNavigationClick('education')"
+            >
+              Ausbildung
+            </li>
+            <li
+              [ngClass]="{ active: isActive('skills') }"
+              (click)="onNavigationClick('skills')"
+            >
+              Skills
+            </li>
+            <li
+              [ngClass]="{ active: isActive('certificats') }"
+              (click)="onNavigationClick('certificats')"
+            >
+              Zertifikate und Erfolge
+            </li>
+          </ul>
+        </nav>
+      </section>
     </div>
 
     <div class="col-7 offset-1 pt-3">
@@ -157,48 +194,6 @@
 
       <section>
         <h2 class="text-primary">Skills</h2>
-        <div class="row">
-          <div class="col-3">
-            <h3>Frontend</h3>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Angular</li>
-              <li>React</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Java</li>
-              <li>Spring Boot</li>
-              <li>PHP</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <h3>Database</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>SQLite</li>
-              <li>Redis</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <h3>DevOps</h3>
-            <ul>
-              <li>Docker</li>
-              <li>Kubernetes</li>
-              <li>GitLab CI/CD</li>
-              <li>GitHub Actions</li>
-              <li>Ansible</li>
-            </ul>
-          </div>
-        </div>
       </section>
     </div>
   </div>

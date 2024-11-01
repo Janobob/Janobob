@@ -1,5 +1,13 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
 $hero-height: 250px;
-$profile-img-offset: -50%;
+
+$profile-image-offset: -50%;
+
+$profile-navigation-color: $dark;
+$profile-navigation-active-color: $primary;
+$profile-navigation-hover-color: $secondary;
 
 .hero {
   height: $hero-height;
@@ -12,6 +20,47 @@ $profile-img-offset: -50%;
 .profile-image-container {
   .profile-image {
     max-width: 100%;
-    margin-top: $profile-img-offset;
+    margin-top: $profile-image-offset;
+  }
+}
+
+.profile-navigation {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: $profile-navigation-color;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $profile-navigation-hover-color;
+
+      &::before {
+        width: 2em;
+        background-color: $profile-navigation-hover-color;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 2px;
+      background-color: $profile-navigation-color;
+      margin-right: 1em;
+      transition: width 0.3s;
+    }
+
+    &.active {
+      color: $profile-navigation-active-color;
+
+      &::before {
+        width: 2em;
+        background-color: $profile-navigation-active-color;
+      }
+    }
   }
 }
