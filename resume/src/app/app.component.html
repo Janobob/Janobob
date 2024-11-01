@@ -1,45 +1,52 @@
-<div class="hero"></div>
+<div class="hero d-none d-sm-block"></div>
 <div class="container p-relative">
   <div class="row">
-    <div class="col-4 profile-sidebar">
-      <section>
-        <div class="profile-image-container col-9">
+    <div class="profile-sidebar col-12 col-sm-4 mt-4 mt-sm-0">
+      <section class="row">
+        <div class="profile-image-container col-4 col-sm-8">
           <img class="profile-image" src="assets/images/profile.png" />
         </div>
-        <h1 class="text-primary">Jan Werren</h1>
-        <h2>ICT Software Engineer</h2>
+        <div class="col-8 col-sm-12">
+          <h1 class="text-primary">Jan Werren</h1>
+          <h2>ICT Software Engineer</h2>
 
-        <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen</p>
+          <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen</p>
+        </div>
       </section>
 
-      <section>
+      <section class="d-none d-sm-block mt-5">
         <nav>
           <ul class="profile-navigation">
             <li
+              class="h5"
               [ngClass]="{ active: isActive('about-me') || isActive('start') }"
               (click)="onNavigationClick('about-me')"
             >
               Über mich
             </li>
             <li
+              class="h5"
               [ngClass]="{ active: isActive('work-experience') }"
               (click)="onNavigationClick('work-experience')"
             >
               Berufserfahrung
             </li>
             <li
+              class="h5"
               [ngClass]="{ active: isActive('education') }"
               (click)="onNavigationClick('education')"
             >
               Ausbildung
             </li>
             <li
+              class="h5"
               [ngClass]="{ active: isActive('skills') }"
               (click)="onNavigationClick('skills')"
             >
               Skills
             </li>
             <li
+              class="h5"
               [ngClass]="{ active: isActive('certificats') }"
               (click)="onNavigationClick('certificats')"
             >
@@ -50,8 +57,8 @@
       </section>
     </div>
 
-    <div class="col-7 offset-1 pt-3">
-      <section class="mt-5" id="about-me">
+    <div class="col-12 col-sm-7 offset-sm-1 pt-3">
+      <section class="mt-2" id="about-me">
         <h2 class="text-primary">Über mich</h2>
         <p>
           Erfahrener ICT Software Engineer mit Fokus auf die Entwicklung und
@@ -86,10 +93,10 @@
         <h2 class="text-primary">Berufserfahrung</h2>
 
         <div class="row">
-          <div class="col-3">
+          <div class="col-12 col-sm-3">
             <p class="text-muted">Juni 2020 - Heute</p>
           </div>
-          <div class="col-9">
+          <div class="col-12 col-sm-9">
             <h3>ICT Software Engineer</h3>
             <p class="text-secondary">
               Die Schweizerische Post , Bern

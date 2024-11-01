@@ -1,5 +1,7 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
+@import "../assets/styles/variables";
+@import "bootstrap/scss/mixins";
 
 $hero-height: 250px;
 
@@ -11,22 +13,30 @@ $profile-navigation-hover-color: $secondary;
 
 .hero {
   height: $hero-height;
+  min-height: $hero-height;
   background-image: url("/assets/images/hero.png");
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .profile-sidebar {
-  position: sticky;
   top: calc($hero-height - 6rem);
   align-self: flex-start;
+
+  @include media-breakpoint-up(sm) {
+    position: sticky;
+  }
 }
 
 .profile-image-container {
   .profile-image {
     max-width: 100%;
-    margin-top: $profile-image-offset;
+    margin-top: 0;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: $profile-image-offset;
+    }
   }
 }
 
@@ -40,6 +50,7 @@ $profile-navigation-hover-color: $secondary;
     color: $profile-navigation-color;
     cursor: pointer;
     transition: color 0.3s;
+    margin-bottom: 1.2rem;
 
     &:hover {
       color: $profile-navigation-hover-color;
