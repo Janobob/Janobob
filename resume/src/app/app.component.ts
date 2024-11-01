@@ -10,13 +10,20 @@ import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  activeFragment: string = 'about-me';
+  activeFragment: string = 'start';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.fragment.subscribe((fragment) => {
-      this.activeFragment = fragment || 'about-me';
+      this.activeFragment = fragment || 'start';
+      this.scrollToFragment(this.activeFragment);
+    });
+  }
+
+  onNavigationClick(fragment: string): void {
+    this.router.navigate([], {
+      fragment: fragment,
     });
   }
 
@@ -24,9 +31,17 @@ export class AppComponent {
     return this.activeFragment === fragment;
   }
 
-  onNavigationClick(fragment: string): void {
-    this.router.navigate([], {
-      fragment: fragment,
-    });
+  scrollToFragment(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      const yOffset = -24;
+      const yPosition =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: yPosition,
+        behavior: 'smooth',
+      });
+    }
   }
 }

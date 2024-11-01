@@ -17,6 +17,12 @@ $profile-navigation-hover-color: $secondary;
   background-size: cover;
 }
 
+.profile-sidebar {
+  position: sticky;
+  top: calc($hero-height - 6rem);
+  align-self: flex-start;
+}
+
 .profile-image-container {
   .profile-image {
     max-width: 100%;
