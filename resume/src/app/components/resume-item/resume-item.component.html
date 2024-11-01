@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 col-sm-3">
+    <span class="badge bg-secondary text-white">{{ dates }}</span>
+  </div>
+  <div class="col-12 col-sm-9">
+    <h3>{{ title }}</h3>
+    <p class="text-secondary">
+      {{ company }}, {{ location }}
+      <span>
+        <a [href]="link" target="_blank">
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      </span>
+    </p>
+    <ul>
+      <li *ngFor="let responsibility of responsibilities">
+        {{ responsibility }}
+      </li>
+    </ul>
+  </div>
+</div>

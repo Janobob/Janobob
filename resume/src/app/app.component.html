@@ -1,16 +1,19 @@
-<div class="hero d-none d-sm-block"></div>
+<div class="hero d-none d-sm-block shadow-sm"></div>
 <div class="container p-relative">
   <div class="row">
     <div class="profile-sidebar col-12 col-sm-4 mt-4 mt-sm-0">
       <section class="row">
         <div class="profile-image-container col-4 col-sm-8">
-          <img class="profile-image" src="assets/images/profile.png" />
+          <img
+            class="profile-image shadow-sm rounded"
+            src="assets/images/profile.png"
+          />
         </div>
         <div class="col-8 col-sm-12">
           <h1 class="text-primary">Jan Werren</h1>
           <h2>ICT Software Engineer</h2>
 
-          <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen</p>
+          <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen.</p>
         </div>
       </section>
 
@@ -47,6 +50,13 @@
             </li>
             <li
               class="h5"
+              [ngClass]="{ active: isActive('languages') }"
+              (click)="onNavigationClick('languages')"
+            >
+              Sprachen
+            </li>
+            <li
+              class="h5"
               [ngClass]="{ active: isActive('certificats') }"
               (click)="onNavigationClick('certificats')"
             >
@@ -57,9 +67,11 @@
       </section>
     </div>
 
-    <div class="col-12 col-sm-7 offset-sm-1 pt-3">
+    <main class="col-12 col-sm-7 offset-sm-1 pt-3">
       <section class="mt-2" id="about-me">
-        <h2 class="text-primary">Über mich</h2>
+        <h2 class="text-primary">
+          <i class="bi bi-person-fill me-2"></i>Über mich
+        </h2>
         <p>
           Erfahrener ICT Software Engineer mit Fokus auf die Entwicklung und
           Optimierung von Web-Anwendungen bei der Schweizerischen Post.
@@ -90,122 +102,97 @@
       </section>
 
       <section class="mt-5" id="work-experience">
-        <h2 class="text-primary">Berufserfahrung</h2>
+        <h2 class="text-primary">
+          <i class="bi bi-briefcase-fill me-2"></i>Berufserfahrung
+        </h2>
 
-        <div class="row">
-          <div class="col-12 col-sm-3">
-            <p class="text-muted">Juni 2020 - Heute</p>
-          </div>
-          <div class="col-12 col-sm-9">
-            <h3>ICT Software Engineer</h3>
-            <p class="text-secondary">
-              Die Schweizerische Post , Bern
-              <span>
-                <a href="https://www.post.ch" target="_blank">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </span>
-            </p>
-            <ul>
-              <li>Standortsuche (places.post.ch)</li>
-              <li>
-                Interne Applikation für Verwaltung von Business Flows im Bereich
-                Revisionen und Finanzen
-              </li>
-              <li>Weiterentwicklung des internen Inkasso-Tools</li>
-              <li>Beratungstool für Mitarbeiter der Post-Filialen</li>
-              <li>
-                Custom Video Content Management System (Ablösung für die
-                vorherige Screenfood-Lösung)
-              </li>
-            </ul>
-          </div>
+        <app-resume-item
+          title="ICT Software Engineer"
+          company="Die Schweizerische Post"
+          location="Bern"
+          link="https://www.post.ch"
+          dates="Juni 2020 - Heute"
+          [responsibilities]="[
+            'Standortsuche (places.post.ch)',
+            'Interne Applikation für Verwaltung von Business Flows im Bereich Revisionen und Finanzen',
+            'Weiterentwicklung des internen Inkasso-Tools',
+            'Beratungstool für Mitarbeiter der Post-Filialen',
+            'Custom Video Content Management System (Ablösung für die vorherige Screenfood-Lösung)'
+          ]"
+        ></app-resume-item>
 
-          <div class="col-3">
-            <p class="text-muted">July 2019 - Juni 2020</p>
-          </div>
-          <div class="col-9">
-            <h3>ICT Software Engineer & Lehrlingsbetreuer</h3>
-            <p class="text-secondary">
-              Die Schweizerische Post , Bern
-              <span>
-                <a href="https://www.post.ch" target="_blank">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </span>
-            </p>
-            <ul>
-              <li>
-                Begleitung und Führung von Lehrlingen bei interne Projekte
-              </li>
-              <li>Code Repositories und Pipelines bereitstellen & pflegen</li>
-              <li>
-                Administrative Aufgaben für die Betreuung der Lehrlinge und
-                Hilfe der Coaches
-              </li>
-            </ul>
-          </div>
-        </div>
+        <app-resume-item
+          title="ICT Software Engineer & Lehrlingsbetreuer"
+          company="Die Schweizerische Post"
+          location="Bern"
+          link="https://www.post.ch"
+          dates="July 2019 - Juni 2020"
+          [responsibilities]="[
+            'Begleitung und Führung von Lehrlingen bei interne Projekte',
+            'Code Repositories und Pipelines bereitstellen & pflegen',
+            'Administrative Aufgaben für die Betreuung der Lehrlinge und Hilfe der Coaches'
+          ]"
+        ></app-resume-item>
       </section>
 
       <section class="mt-5" id="education">
-        <h2 class="text-primary">Ausbildung</h2>
+        <h2 class="text-primary">
+          <i class="bi bi-mortarboard-fill me-2"></i>Ausbildung
+        </h2>
 
-        <div class="row">
-          <div class="col-3">
-            <p class="text-muted">September 2022 - Heute</p>
-          </div>
-          <div class="col-9">
-            <h3>Bachelor's degree, Informatik</h3>
-            <p class="text-secondary">
-              FHNW - Fachhochschule Nordwestschweiz, Windisch
-              <span>
-                <a href="https://www.fhnw.ch" target="_blank">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </span>
-            </p>
-          </div>
+        <app-resume-item
+          title="Bachelor's degree, Informatik"
+          company="FHNW - Fachhochschule Nordwestschweiz"
+          location="Brugg-Windisch"
+          link="https://www.fhnw.ch"
+          dates="September 2022 - Heute"
+        ></app-resume-item>
 
-          <div class="col-3">
-            <p class="text-muted">August 2019 - July 2021</p>
-          </div>
-          <div class="col-9">
-            <h3>Technische Berufsmaturität, Technik</h3>
-            <p class="text-secondary">
-              gibb - Gewerblich-Industrielle Berufsschule Bern, Bern
-              <span>
-                <a href="https://www.gibb.ch" target="_blank">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </span>
-            </p>
-          </div>
+        <app-resume-item
+          title="Technische Berufsmaturität, Technik"
+          company="gibb - Gewerblich-Industrielle Berufsschule Bern"
+          location="Bern"
+          link="https://www.gibb.ch"
+          dates="August 2019 - July 2021"
+        ></app-resume-item>
 
-          <div class="col-3">
-            <p class="text-muted">August 2015 - July 2019</p>
-          </div>
-          <div class="col-9">
-            <h3>Informatiker EFZ, Fachrichtung Appliationsentwickler</h3>
-            <p class="text-secondary">
-              gibb - Gewerblich-Industrielle Berufsschule Bern, Bern
-              <span>
-                <a href="https://www.gibb.ch" target="_blank">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </span>
-            </p>
-          </div>
-        </div>
+        <app-resume-item
+          title="Informatiker EFZ, Fachrichtung Appliationsentwickler"
+          company="gibb - Gewerblich-Industrielle Berufsschule Bern"
+          location="Bern"
+          link="https://www.gibb.ch"
+          dates="August 2015 - July 2019"
+        ></app-resume-item>
       </section>
 
       <section id="skills">
-        <h2 class="text-primary">Skills</h2>
+        <h2 class="text-primary">
+          <i class="bi bi-lightbulb-fill me-2"></i>Skills
+        </h2>
+      </section>
+
+      <section id="languages" class="mt-5">
+        <h2 class="text-primary">
+          <i class="bi bi-translate me-2"></i>Languages
+        </h2>
+        <ul class="list-unstyled">
+          <li><strong>Deutsch:</strong> Muttersprache</li>
+          <li>
+            <strong>Englisch:</strong> Berufliche Arbeitserfahrung
+            <br />
+            <small class="text-muted"
+              >Zertifikat: Cambridge English First (FCE)</small
+            >
+          </li>
+          <li><strong>Französisch:</strong> Schulkenntnisse</li>
+        </ul>
       </section>
 
       <section id="certificats">
-        <h2 class="text-primary">Zertifikate und Erfolge</h2>
+        <h2 class="text-primary">
+          <i class="bi bi-award-fill me-2"></i>Zertifikate und Erfolge
+        </h2>
       </section>
-    </div>
+    </main>
   </div>
 </div>
