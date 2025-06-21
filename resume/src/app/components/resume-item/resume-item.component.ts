@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-resume-item',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './resume-item.component.html',
-  styleUrls: ['./resume-item.component.css'],
+    selector: 'app-resume-item',
+    imports: [CommonModule],
+    templateUrl: './resume-item.component.html',
+    styleUrls: ['./resume-item.component.css']
 })
 export class ResumeItemComponent {
   @Input() title!: string;
