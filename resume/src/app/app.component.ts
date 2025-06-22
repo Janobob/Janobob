@@ -4,10 +4,10 @@ import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ResumeItemComponent } from './components/resume-item/resume-item.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, CommonModule, ResumeItemComponent],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'app-root',
+  imports: [RouterOutlet, CommonModule, ResumeItemComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   activeFragment: string = 'start';

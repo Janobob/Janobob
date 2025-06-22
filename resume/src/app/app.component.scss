@@ -4,6 +4,7 @@
 @import "bootstrap/scss/mixins";
 
 $hero-height: 250px;
+$hero-height-sm: 180px;
 
 $profile-image-offset: -50%;
 
@@ -18,6 +19,11 @@ $profile-navigation-hover-color: $secondary;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include media-breakpoint-down(lg) {
+    height: $hero-height-sm;
+    min-height: $hero-height-sm;
+  }
 }
 
 .profile-sidebar {
@@ -26,6 +32,10 @@ $profile-navigation-hover-color: $secondary;
 
   @include media-breakpoint-up(sm) {
     position: sticky;
+  }
+
+  @include media-breakpoint-down(lg) {
+    top: calc($hero-height-sm - 6rem);
   }
 }
 
