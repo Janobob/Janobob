@@ -1,0 +1,460 @@
+<div class="hero d-none d-sm-block shadow-sm"></div>
+<div class="container p-relative">
+  <div class="row">
+    <div class="profile-sidebar col-12 col-sm-4 mt-4 mt-sm-0">
+      <section class="row">
+        <div class="profile-image-container col-3 col-sm-8">
+          <img
+            class="profile-image shadow-sm rounded"
+            src="assets/images/profile.png"
+          />
+        </div>
+        <div class="col-9 col-sm-12">
+          <h1 class="text-primary">Jan Werren</h1>
+          <h2>Fullstack Developer</h2>
+        </div>
+        <p>Spezialisiert auf Applikationsentwicklung und Web-Anwendungen.</p>
+      </section>
+
+      <section class="d-none d-sm-block mt-5">
+        <nav>
+          <ul class="profile-navigation">
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('about-me') || isActive('start') }"
+              (click)="onNavigationClick('about-me')"
+            >
+              Über mich
+            </li>
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('work-experience') }"
+              (click)="onNavigationClick('work-experience')"
+            >
+              Berufserfahrung
+            </li>
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('education') }"
+              (click)="onNavigationClick('education')"
+            >
+              Ausbildung
+            </li>
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('skills') }"
+              (click)="onNavigationClick('skills')"
+            >
+              Skills
+            </li>
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('languages') }"
+              (click)="onNavigationClick('languages')"
+            >
+              Sprachen
+            </li>
+            <li
+              class="h5"
+              [ngClass]="{ active: isActive('certificats') }"
+              (click)="onNavigationClick('certificats')"
+            >
+              Zertifikate und Erfolge
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="d-none d-sm-block mt-5">
+        <h5 class="text-uppercase text-muted">Downloads</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a
+              href="assets/files/Lebenslauf_JanWerren.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="Lebenslauf PDF öffnen"
+            >
+              <div
+                class="mb-2 d-flex align-items-center justify-content-between"
+              >
+                <span>Lebenslauf</span>
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="assets/files/Zertifikate_JanWerren.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="Zertifikate PDF öffnen"
+            >
+              <div
+                class="mb-2 d-flex align-items-center justify-content-between"
+              >
+                <span>Zertifikate</span>
+
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <main class="col-12 col-sm-7 offset-sm-1 pt-3">
+      <section id="about-me" class="mt-2">
+        <h2 class="text-primary">
+          <i class="bi bi-person-fill me-2"></i>Über mich
+        </h2>
+        <p>
+          Erfahrener ICT Software Engineer mit Fokus auf die Entwicklung und
+          Optimierung von Web-Anwendungen bei der Schweizerischen Post.
+        </p>
+        <p>
+          Mit über 5 Jahren Berufserfahrung in der Applikationsentwicklung setze
+          ich innovative Technologien ein, um skalierbare und nutzerfreundliche
+          Lösungen zu schaffen.
+        </p>
+
+        <a
+          href="https://www.linkedin.com/in/jan-werren"
+          target="_blank"
+          class="btn btn-outline-dark me-2"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+        <a
+          href="https://www.github.com/Janobob"
+          target="_blank"
+          class="btn btn-outline-dark me-2"
+          ><i class="bi bi-github"></i
+        ></a>
+        <a
+          href="mailto:jan.werren@outlook.com&subject=Kontaktanfrage"
+          class="btn btn-outline-dark me-2"
+          ><i class="bi bi-envelope"></i
+        ></a>
+      </section>
+
+      <hr />
+
+      <section id="work-experience" class="mt-3">
+        <h2 class="text-primary">
+          <i class="bi bi-briefcase-fill me-2"></i>Berufserfahrung
+        </h2>
+
+        <app-resume-item
+          title="ICT Software Engineer"
+          company="Die Schweizerische Post"
+          location="Bern"
+          link="https://www.post.ch"
+          dates="Juni 2020 - Heute"
+          [responsibilities]="[
+            'Aktivitäten Portal - Meine Post',
+            'Standortsuche (places.post.ch)',
+            'Interne Applikation für Verwaltung von Business Flows im Bereich Revisionen und Finanzen',
+            'Weiterentwicklung des internen Inkasso-Tools',
+            'Beratungstool für Mitarbeiter der Post-Filialen',
+            'Custom Video Content Management System (Ablösung für die vorherige Screenfood-Lösung)'
+          ]"
+        ></app-resume-item>
+
+        <app-resume-item
+          title="ICT Software Engineer & Lehrlingsbetreuer"
+          company="Die Schweizerische Post"
+          location="Bern"
+          link="https://www.post.ch"
+          dates="July 2019 - Juni 2020"
+          [responsibilities]="[
+            'Begleitung und Führung von Lehrlingen bei interne Projekte',
+            'Code Repositories und Pipelines bereitstellen & pflegen',
+            'Administrative Aufgaben für die Betreuung der Lehrlinge und Hilfe der Coaches'
+          ]"
+        ></app-resume-item>
+      </section>
+
+      <hr />
+
+      <section id="education" class="mt-3">
+        <h2 class="text-primary">
+          <i class="bi bi-mortarboard-fill me-2"></i>Ausbildung
+        </h2>
+
+        <app-resume-item
+          title="Bachelor's degree, Informatik"
+          company="FHNW - Fachhochschule Nordwestschweiz"
+          location="Brugg-Windisch"
+          link="https://www.fhnw.ch"
+          dates="September 2022 - Heute"
+        ></app-resume-item>
+
+        <app-resume-item
+          title="Technische Berufsmaturität, Technik"
+          company="gibb - Gewerblich-Industrielle Berufsschule Bern"
+          location="Bern"
+          link="https://www.gibb.ch"
+          dates="August 2019 - July 2021"
+        ></app-resume-item>
+
+        <app-resume-item
+          title="Informatiker EFZ, Fachrichtung Applikationsentwickler"
+          company="gibb - Gewerblich-Industrielle Berufsschule Bern"
+          location="Bern"
+          link="https://www.gibb.ch"
+          dates="August 2015 - July 2019"
+        ></app-resume-item>
+      </section>
+
+      <hr />
+
+      <section id="skills" class="mt-3">
+        <h2 class="text-primary">
+          <i class="bi bi-lightbulb-fill me-2"></i>Skills
+        </h2>
+
+        <h5 class="mt-4">Web Development</h5>
+        <p class="d-flex flex-wrap gap-2">
+          <img
+            src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black"
+          />
+          <img
+            src="https://img.shields.io/badge/Redux-764ABC?style=flat&logo=redux&logoColor=fff"
+          />
+          <img
+            src="https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"
+          />
+          <img
+            src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Sass-C69?style=flat&logo=sass&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=fff"
+          />
+        </p>
+
+        <h5 class="mt-4">Programming Languages</h5>
+        <p class="d-flex flex-wrap gap-2">
+          <img
+            src="https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=fff"
+          />
+          <img
+            src="https://custom-icon-badges.demolab.com/badge/C%23-%23239120.svg?logo=cshrp&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white"
+          />
+        </p>
+
+        <h5 class="mt-4">Tools & Cloud</h5>
+        <p class="d-flex flex-wrap gap-2">
+          <img
+            src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white"
+          />
+          <img
+            src="https://custom-icon-badges.demolab.com/badge/AWS-%23FF9900.svg?logo=aws&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Terraform-623CE4?style=flat&logo=terraform&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Postgres-%23316192.svg?style=flat&logo=postgresql&logoColor=white"
+          />
+        </p>
+
+        <h5 class="mt-4">DevOps & CI/CD</h5>
+        <p class="d-flex flex-wrap gap-2">
+          <img
+            src="https://img.shields.io/badge/Jenkins-D24939?style=flat&logo=jenkins&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/SonarQube%20Cloud-126ED3?style=flat&logo=sonarqubecloud&logoColor=fff"
+          />
+          <img
+            src="https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat&logo=argo-cd&logoColor=white"
+          />
+          <img
+            src="https://img.shields.io/badge/Flux%20CD-0D96FF?style=flat&logo=flux-cd&logoColor=white"
+          />
+        </p>
+
+        <h5 class="mt-4">Academic / Special Interests</h5>
+        <p class="d-flex flex-wrap gap-2">
+          <img
+            src="https://img.shields.io/badge/CUDA-76B900?style=flat&logo=nvidia&logoColor=white"
+            title="Module 'pac': Parrallel Computing"
+          />
+          <img
+            src="https://img.shields.io/badge/Haskell-5D4F85?style=flat&logo=haskell&logoColor=white"
+            title="Module 'fprog': Fuctional Programming, Module 'fprod': Functional Programming Design"
+          />
+          <img
+            src="https://img.shields.io/badge/Elm-1293D8?logo=elm&logoColor=fff"
+            title="Module 'fprod': Functional Programming Design"
+          />
+        </p>
+      </section>
+
+      <hr />
+
+      <section id="languages" class="mt-3">
+        <h2 class="text-primary">
+          <i class="bi bi-translate me-2"></i>Sprachen
+        </h2>
+        <ul class="list-unstyled">
+          <li><strong>Deutsch:</strong> Muttersprache</li>
+          <li>
+            <strong>Englisch:</strong> Berufliche Arbeitserfahrung
+            <br />
+            <small class="text-muted"
+              >Zertifikat: Cambridge English First (FCE)</small
+            >
+          </li>
+          <li><strong>Französisch:</strong> Schulkenntnisse</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section id="certificats" class="mt-3">
+        <h2 class="text-primary">
+          <i class="bi bi-award-fill me-2"></i>Zertifikate und Erfolge
+        </h2>
+
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>
+              Berufsbildner
+              <span class="badge bg-secondary rounded-pill ms-2">2019</span>
+            </span>
+            <a
+              href="assets/certificates/Berufsbildner_2019.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="Berufsbildner 2019 PDF öffnen"
+            >
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>
+              Cambridge English First (FCE)
+              <span class="badge bg-secondary rounded-pill ms-2">2020</span>
+            </span>
+            <a
+              href="assets/certificates/First_2020.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="FCE 2020 PDF öffnen"
+            >
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>
+              SwissSkills Wettbewerb
+              <span class="badge bg-secondary rounded-pill ms-2">2017</span>
+            </span>
+            <a
+              href="assets/certificates/SwissSkills_2017.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="SwissSkills 2017 PDF öffnen"
+            >
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>
+              SwissSkills Wettbewerb
+              <span class="badge bg-secondary rounded-pill ms-2">2018</span>
+            </span>
+            <a
+              href="assets/certificates/SwissSkills_2018.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="SwissSkills 2018 PDF öffnen"
+            >
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section class="d-block d-sm-none mt-3">
+        <h2 class="text-primary"><i class="bi bi-folder me-2"></i>Downloads</h2>
+        <ul class="list-unstyled">
+          <li>
+            <a
+              href="assets/files/Lebenslauf_JanWerren.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="Lebenslauf PDF öffnen"
+            >
+              <div
+                class="mb-2 d-flex align-items-center justify-content-between"
+              >
+                <span>Lebenslauf</span>
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="assets/files/Zertifikate_JanWerren.pdf"
+              target="_blank"
+              class="text-decoration-none"
+              aria-label="Zertifikate PDF öffnen"
+            >
+              <div
+                class="mb-2 d-flex align-items-center justify-content-between"
+              >
+                <span>Zertifikate</span>
+
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,93 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "../assets/styles/variables";
+@import "bootstrap/scss/mixins";
+
+$hero-height: 250px;
+$hero-height-sm: 180px;
+
+$profile-image-offset: -50%;
+
+$profile-navigation-color: $dark;
+$profile-navigation-active-color: $primary;
+$profile-navigation-hover-color: $secondary;
+
+.hero {
+  height: $hero-height;
+  min-height: $hero-height;
+  background-image: url("/assets/images/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-breakpoint-down(lg) {
+    height: $hero-height-sm;
+    min-height: $hero-height-sm;
+  }
+}
+
+.profile-sidebar {
+  top: calc($hero-height - 6rem);
+  align-self: flex-start;
+
+  @include media-breakpoint-up(sm) {
+    position: sticky;
+  }
+
+  @include media-breakpoint-down(lg) {
+    top: calc($hero-height-sm - 6rem);
+  }
+}
+
+.profile-image-container {
+  .profile-image {
+    max-width: 100%;
+    margin-top: 0;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: $profile-image-offset;
+    }
+  }
+}
+
+.profile-navigation {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: $profile-navigation-color;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-bottom: 1.2rem;
+
+    &:hover {
+      color: $profile-navigation-hover-color;
+
+      &::before {
+        width: 2em;
+        background-color: $profile-navigation-hover-color;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 2px;
+      background-color: $profile-navigation-color;
+      margin-right: 1em;
+      transition: width 0.3s;
+    }
+
+    &.active {
+      color: $profile-navigation-active-color;
+
+      &::before {
+        width: 2em;
+        background-color: $profile-navigation-active-color;
+      }
+    }
+  }
+}
