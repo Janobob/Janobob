@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "typst:build": "typst compile src/document/resume_blank.typ src/assets/files/Lebenslauf_JanWerren_Blank.pdf --root src",
-    "typst:watch": "typst watch src/document/resume_blank.typ src/assets/files/Lebenslauf_JanWerren_Blank.pdf --root src"
+    "typst_blank:build": "typst compile src/document/resume_blank.typ src/assets/files/Lebenslauf_JanWerren_Blank.pdf --root src",
+    "typst_blank:watch": "typst watch src/document/resume_blank.typ src/assets/files/Lebenslauf_JanWerren_Blank.pdf --root src"
   },
   "private": true,
   "dependencies": {
