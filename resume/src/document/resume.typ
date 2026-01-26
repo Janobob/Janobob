@@ -253,7 +253,7 @@
       #beruffirma[Die Schweizerische Post AG, Bern]
       #berufzeit[2019 - Juni 2020]
       
-      - Begleitung und Führung von Lehrlingen bei interne Projekte
+      - Begleitung und Führung von Lehrlingen bei internen Projekten
       - Code Repositories und Pipelines bereitstellen & pflegen
       - Administrative Aufgaben für die Betreuung der Lehrlinge und Hilfe der Coaches 
 
